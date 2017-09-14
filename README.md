@@ -2,7 +2,14 @@
 
 Charity is a responsive layout based on Bootstrap v3.3.7. The layout is designed for the main (Home) page. This project includes HTML5, CSS3, jQuery and a plugin Lightbox. It uses Gulp for compiling Sass to CSS, watching Sass files for changes, generating a sprite from images.
 
-## Required preconditions
+## Getting Started
+
+* clone this GIT repository
+* go to the folder `app` and run `index.html`
+
+## Development
+
+### Required preconditions
 
 * [install](https://howtonode.org/how-to-install-nodejs) Node.js
 * install Gulp
@@ -10,7 +17,7 @@ Charity is a responsive layout based on Bootstrap v3.3.7. The layout is designed
     $ npm install gulp -g
     ```
     
-## Deployement steps
+### Deployement steps
 
 * clone this GIT repository
 * go to the created folder
@@ -19,7 +26,7 @@ Charity is a responsive layout based on Bootstrap v3.3.7. The layout is designed
     $ npm install
     ```
 
-* run gulp (optional, need only for development)
+* run gulp
     ```
     $ gulp
     ```
