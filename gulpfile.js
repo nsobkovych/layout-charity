@@ -4,28 +4,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var spritesmith = require('gulp.spritesmith');
 var merge = require('merge-stream');
 
-var iconfont = require('gulp-iconfont');
-var iconfontCss = require('gulp-iconfont-css');
-
-var fontName = 'planer-icons';
-
-gulp.task('iconfont', function(){
-    gulp.src(['dist/img/icons/*.svg'])
-        .pipe(iconfontCss({
-            fontName: fontName,
-            path: 'dist/templates/_icons.scss',
-            targetPath: '../../dist/sass/_planer-icons.scss',
-            fontPath: '../fonts/'
-        }))
-        .pipe(iconfont({
-            fontName: fontName,
-            prependUnicode: true,
-            formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
-            normalize: true,
-        }))
-        .pipe(gulp.dest('app/fonts/'));
-});
-
 gulp.task('sass', function () {
   return gulp.src('dist/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -49,6 +27,8 @@ gulp.task('sprite', function () {
     return merge(imgStream, cssStream);
 });
 
-gulp.task('watch', ['sass'], function(){
+gulp.task('watch', ['sass', 'sprite'], function(){
 	gulp.watch('dist/sass/**/*.scss', ['sass']);
-})
+});
+
+gulp.task('default', ['watch']);
